@@ -45,7 +45,8 @@ chown -R ubuntu:ubuntu /data/
 
 # Update Nginx configuration
 nginx_config="/etc/nginx/sites-available/default"
-sed -i "/^server {/a location /hbnb_static/ {\n\t\talias /data/web_static/current/;\n\t}" "$nginx_config"
+#sed -i "/^server {/a location /hbnb_static/ {\n\t\talias /data/web_static/current/;\n\t}" "$nginx_config"
+sed -i '/^\s*location \/hbnb_static/ {s/^\s*location \/hbnb_static.*$/\tlocation \/hbnb_static\/ {\n\t\talias \/data\/web_static\/current\/;\n\t}/}' "$nginx_config"
 
 # Restart Nginx
 systemctl restart nginx
