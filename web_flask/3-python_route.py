@@ -2,7 +2,7 @@
 """
 A script that starts a Flask web application with 0.0.0.0, port 5000
 """
-from flask import abort, Flask
+from flask import Flask
 app = Flask(__name__)
 
 
@@ -23,22 +23,21 @@ def hbnb():
 
 
 @app.route("/c/<text>", methods=['GET'], strict_slashes=False)
-def cParam(text=None):
+def c(text):
     """
     '/c/<text>' route page
     """
-    if text:
-        return "C "+text.replace('_', ' ')
-    else:
-        abort(404)
+    text = text.replace('_', ' ')
+    return "C {}".format(text)
 
 
-@app.route("/python/<text>", methods=['GET'], strict_slashes=False)
+@app.route("/python/<text>", strict_slashes=False)
 def pythonParam(text='is cool'):
     """
     '/python/<text>' route page
     """
-    return "Python "+text.replace('_', ' ')
+    text = text.replace('_', ' ')
+    return "Python {}".format(text)
 
 
 if __name__ == '__main__':
