@@ -34,14 +34,11 @@ def cParam(text=None):
 
 
 @app.route("/python/<text>", methods=['GET'], strict_slashes=False)
-def pythonParam(text="is cool"):
+def pythonParam(text='is cool'):
     """
     '/python/<text>' route page
     """
-    if text:
-        return "Python"+' '+text.replace('_', ' ')
-    else:
-        abort(404)
+    return "Python"+' '+text.replace('_', ' ')
 
 
 if __name__ == '__main__':
