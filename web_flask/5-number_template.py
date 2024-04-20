@@ -50,7 +50,7 @@ def number(n):
 
 
 @app.route("/number_template/<int:n>", strict_slashes=False)
-def number(n):
+def numberTemplate(n):
     """
     '/number/<n>' route page
     """
