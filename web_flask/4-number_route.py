@@ -32,6 +32,7 @@ def c(text):
 
 
 @app.route("/python/<text>", strict_slashes=False)
+@app.route("/python/", strict_slashes=False)
 def pythonParam(text='is cool'):
     """
     '/python/<text>' route page
@@ -40,13 +41,12 @@ def pythonParam(text='is cool'):
     return "Python {}".format(text)
 
 
-@app.route("/number/<n>", strict_slashes=False)
+@app.route("/number/<int:n>", strict_slashes=False)
 def number(n):
     """
     '/number/<n>' route page
     """
-    if isinstance(n, int):
-        return "{} is a number".format(n)
+    return "{} is a number".format(n)
 
 
 if __name__ == '__main__':

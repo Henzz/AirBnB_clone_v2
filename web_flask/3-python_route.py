@@ -32,7 +32,8 @@ def c(text):
 
 
 @app.route("/python/<text>", strict_slashes=False)
-def pythonParam(text='is cool'):
+@app.route("/python/", strict_slashes=False)
+def python(text='is cool'):
     """
     '/python/<text>' route page
     """
