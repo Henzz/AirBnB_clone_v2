@@ -2,7 +2,7 @@
 """
 A script that starts a Flask web application with 0.0.0.0, port 5000
 """
-from flask import Flask
+from flask import abort, Flask
 app = Flask(__name__)
 
 
@@ -30,7 +30,7 @@ def cParam(text=None):
     if text:
         return "C"+' '+text
     else:
-        return "C"
+        abort(404)
 
 
 if __name__ == '__main__':
