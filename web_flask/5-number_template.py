@@ -2,7 +2,7 @@
 """
 A script that starts a Flask web application with 0.0.0.0, port 5000
 """
-from flask import render_template, Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 
@@ -50,9 +50,9 @@ def number(n):
 
 
 @app.route("/number_template/<int:n>", strict_slashes=False)
-def numberTemplate(n):
+def number_template(n):
     """
-    '/number/<n>' route page
+    '/number_template/<n>' route page
     """
     return render_template('5-number.html', num=n)
 
