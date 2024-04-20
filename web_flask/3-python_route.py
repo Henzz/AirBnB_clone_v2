@@ -28,7 +28,7 @@ def cParam(text=None):
     '/c/<text>' route page
     """
     if text:
-        return "C"+' '+text.replace('_', ' ')
+        return "C "+text.replace('_', ' ')
     else:
         abort(404)
 
@@ -38,7 +38,7 @@ def pythonParam(text='is cool'):
     """
     '/python/<text>' route page
     """
-    return "Python"+' '+text.replace('_', ' ')
+    return "Python "+text.replace('_', ' ')
 
 
 if __name__ == '__main__':
