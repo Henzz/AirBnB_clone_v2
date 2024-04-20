@@ -28,7 +28,7 @@ def cParam(text=None):
     '/c/<text>' route page
     """
     if text:
-        return "C"+' '+text
+        return "C"+' '+text.replace('_', ' ')
     else:
         abort(404)
 
