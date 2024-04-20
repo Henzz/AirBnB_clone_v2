@@ -15,7 +15,7 @@ def hello_world():
 
 
 @app.route("/hbnb", methods=['GET'], strict_slashes=False)
-def hello_world():
+def hbnb():
     """
     '/hbnb' route page
     """
