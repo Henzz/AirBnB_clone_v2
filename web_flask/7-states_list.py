@@ -20,6 +20,9 @@ def states_list(n):
 
 @app.teardown_appcontext
 def teardown_db(exception):
+    """
+    tear down
+    """
     storage.close()
 
 
