@@ -15,7 +15,7 @@ def states_list(n):
     """
     states = storage.all(State).values()
     sorted_states = sorted(states, key=lambda state: state.name)
-    return render_template('states_list.html', states=sorted_states)
+    return render_template('7-states_list.html', states=sorted_states)
 
 
 @app.teardown_appcontext
